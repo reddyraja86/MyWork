@@ -1,0 +1,331 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Async file upload with jQuery 
+	</title> 
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+</head> 
+
+<body> 
+
+	<div align="center"> 
+		<h1>Translate an Download file</h1>
+		<form method="post"  enctype="multipart/form-data"	id="myform"> 
+			<table>
+				<tr><td><b>Source Language</b></td> <td></td><td></td> <td>
+				<select id="sl">
+				<option value="en">-Select-</option>
+				<option value="af">Afrikaans-af</option>
+				<option value="sq ">Albanian-sq </option>
+				<option value="am ">Amharic-am </option>
+				<option value="ar ">Arabic-ar </option>
+				<option value="hy ">Armenian-hy </option>
+				<option value="az ">Azerbaijani-az </option>
+				<option value="eu ">Basque-eu </option>
+				<option value="be ">Belarusian-be </option>
+				<option value="bn ">Bengali-bn </option>
+				<option value="bs ">Bosnian-bs </option>
+				<option value="bg ">Bulgarian-bg </option>
+				<option value="ca ">Catalan-ca </option>
+				<option value="ceb  ">Cebuano-ceb  </option>
+				<option value="CN or zh ">Chinese(Simplified) -CN or zh </option>
+				<option value="TW ">Chinese (Traditional)-TW </option>
+				<option value="co ">Corsican-co </option>
+				<option value="hr ">Croatian-hr </option>
+				<option value="cs ">Czech-cs </option>
+				<option value="da ">Danish-da </option>
+				<option value="nl ">Dutch-nl </option>
+				<option value="en ">English-en </option>
+				<option value="eo">Esperanto-eo</option>
+				<option value="et">Estonian-et</option>
+				<option value="fi">Finnish-fi</option>
+				<option value="fr">French-fr</option>
+				<option value="fy">Frisian-fy</option>
+				<option value="gl">Galician-gl</option>
+				<option value="ka">Georgian-ka</option>
+				<option value="de">German-de</option>
+				<option value="el">Greek-el</option>
+				<option value="gu">Gujarati-gu</option>
+				<option value="ht">Haitian Creole-ht</option>
+				<option value="ha">Hausa-ha</option>
+				<option value="haw (ISO">Hawaiian-haw (ISO</option>
+				<option value="he or iw">Hebrew-he or iw</option>
+				<option value="hi">Hindi-hi</option>
+				<option value="hmn (ISO">Hmong-hmn (ISO</option>
+				<option value="hu">Hungarian-hu</option>
+				<option value="is">Icelandic-is</option>
+				<option value="ig">Igbo-ig</option>
+				<option value="id">Indonesian-id</option>
+				<option value="ga">Irish-ga</option>
+				<option value="it">Italian-it</option>
+				<option value="ja">Japanese-ja</option>
+				<option value="jv">Javanese-jv</option>
+				<option value="kn">Kannada-kn</option>
+				<option value="kk">Kazakh-kk</option>
+				<option value="km">Khmer-km</option>
+				<option value="ko">Korean-ko</option>
+				<option value="ku">Kurdish-ku</option>
+				<option value="ky">Kyrgyz-ky</option>
+				<option value="lo">Lao-lo</option>
+				<option value="la">Latin-la</option>
+				<option value="lv">Latvian-lv</option>
+				<option value="lt">Lithuanian-lt</option>
+				<option value="lb">Luxembourgish-lb</option>
+				<option value="mk">Macedonian-mk</option>
+				<option value="mg">Malagasy-mg</option>
+				<option value="ms">Malay-ms</option>
+				<option value="ml">Malayalam-ml</option>
+				<option value="mt">Maltese-mt</option>
+				<option value="mi">Maori-mi</option>
+				<option value="mr">Marathi-mr</option>
+				<option value="mn">Mongolian-mn</option>
+				<option value="my">Myanmar (Burmese)-my</option>
+				<option value="ne">Nepali-ne</option>
+				<option value="no">Norwegian-no</option>
+				<option value="ny">Nyanja (Chichewa)-ny</option>
+				<option value="ps">Pashto-ps</option>
+				<option value="fa">Persian-fa</option>
+				<option value="pl">Polish-pl</option>
+				<option value="pt">Portuguese (Portugal, Brazil)-pt</option>
+				<option value="pa">Punjabi-pa</option>
+				<option value="ro">Romanian-ro</option>
+				<option value="ru">Russian-ru</option>
+				<option value="sm">Samoan-sm</option>
+				<option value="gd">Scots Gaelic-gd</option>
+				<option value="sr">Serbian-sr</option>
+				<option value="st">Sesotho-st</option>
+				<option value="sn">Shona-sn</option>
+				<option value="sd">Sindhi-sd</option>
+				<option value="si">Sinhala (Sinhalese)-si</option>
+				<option value="sk">Slovak-sk</option>
+				<option value="sl">Slovenian-sl</option>
+				<option value="so">Somali-so</option>
+				<option value="es">Spanish-es</option>
+				<option value="su">Sundanese-su</option>
+				<option value="sw">Swahili-sw</option>
+				<option value="sv">Swedish-sv</option>
+				<option value="tl">Tagalog (Filipino)-tl</option>
+				<option value="tg">Tajik-tg</option>
+				<option value="ta">Tamil-ta</option>
+				<option value="te">Telugu-te</option>
+				<option value="th">Thai-th</option>
+				<option value="tr">Turkish-tr</option>
+				<option value="uk">Ukrainian-uk</option>
+				<option value="ur">Urdu-ur</option>
+				<option value="uz">Uzbek-uz</option>
+				<option value="vi">Vietnamese-vi</option>
+				<option value="cy">Welsh-cy</option>
+				<option value="xh">Xhosa-xh</option>
+				<option value="yi">Yiddish-yi</option>
+				<option value="yo">Yoruba-yo</option>
+				<option value="zu">Zulu-zu</option>
+				</select>
+  </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+
+<tr><td><b>Target Language</b></td> <td></td><td></td> <td>
+				<select id="tl">
+				<option value="en">-Select-</option>
+				<option value="af">Afrikaans-af</option>
+				<option value="sq">Albanian-sq </option>
+				<option value="am">Amharic-am </option>
+				<option value="ar ">Arabic-ar </option>
+				<option value="hy ">Armenian-hy </option>
+				<option value="az ">Azerbaijani-az </option>
+				<option value="eu ">Basque-eu </option>
+				<option value="be ">Belarusian-be </option>
+				<option value="bn ">Bengali-bn </option>
+				<option value="bs ">Bosnian-bs </option>
+				<option value="bg ">Bulgarian-bg </option>
+				<option value="ca ">Catalan-ca </option>
+				<option value="ceb  ">Cebuano-ceb  </option>
+				<option value="CN or zh ">Chinese(Simplified) -CN or zh </option>
+				<option value="TW ">Chinese (Traditional)-TW </option>
+				<option value="co ">Corsican-co </option>
+				<option value="hr ">Croatian-hr </option>
+				<option value="cs ">Czech-cs </option>
+				<option value="da ">Danish-da </option>
+				<option value="nl ">Dutch-nl </option>
+				<option value="en ">English-en </option>
+				<option value="eo">Esperanto-eo</option>
+				<option value="et">Estonian-et</option>
+				<option value="fi">Finnish-fi</option>
+				<option value="fr">French-fr</option>
+				<option value="fy">Frisian-fy</option>
+				<option value="gl">Galician-gl</option>
+				<option value="ka">Georgian-ka</option>
+				<option value="de">German-de</option>
+				<option value="el">Greek-el</option>
+				<option value="gu">Gujarati-gu</option>
+				<option value="ht">Haitian Creole-ht</option>
+				<option value="ha">Hausa-ha</option>
+				<option value="haw (ISO">Hawaiian-haw (ISO</option>
+				<option value="he or iw">Hebrew-he or iw</option>
+				<option value="hi">Hindi-hi</option>
+				<option value="hmn (ISO">Hmong-hmn (ISO</option>
+				<option value="hu">Hungarian-hu</option>
+				<option value="is">Icelandic-is</option>
+				<option value="ig">Igbo-ig</option>
+				<option value="id">Indonesian-id</option>
+				<option value="ga">Irish-ga</option>
+				<option value="it">Italian-it</option>
+				<option value="ja">Japanese-ja</option>
+				<option value="jv">Javanese-jv</option>
+				<option value="kn">Kannada-kn</option>
+				<option value="kk">Kazakh-kk</option>
+				<option value="km">Khmer-km</option>
+				<option value="ko">Korean-ko</option>
+				<option value="ku">Kurdish-ku</option>
+				<option value="ky">Kyrgyz-ky</option>
+				<option value="lo">Lao-lo</option>
+				<option value="la">Latin-la</option>
+				<option value="lv">Latvian-lv</option>
+				<option value="lt">Lithuanian-lt</option>
+				<option value="lb">Luxembourgish-lb</option>
+				<option value="mk">Macedonian-mk</option>
+				<option value="mg">Malagasy-mg</option>
+				<option value="ms">Malay-ms</option>
+				<option value="ml">Malayalam-ml</option>
+				<option value="mt">Maltese-mt</option>
+				<option value="mi">Maori-mi</option>
+				<option value="mr">Marathi-mr</option>
+				<option value="mn">Mongolian-mn</option>
+				<option value="my">Myanmar (Burmese)-my</option>
+				<option value="ne">Nepali-ne</option>
+				<option value="no">Norwegian-no</option>
+				<option value="ny">Nyanja (Chichewa)-ny</option>
+				<option value="ps">Pashto-ps</option>
+				<option value="fa">Persian-fa</option>
+				<option value="pl">Polish-pl</option>
+				<option value="pt">Portuguese (Portugal, Brazil)-pt</option>
+				<option value="pa">Punjabi-pa</option>
+				<option value="ro">Romanian-ro</option>
+				<option value="ru">Russian-ru</option>
+				<option value="sm">Samoan-sm</option>
+				<option value="gd">Scots Gaelic-gd</option>
+				<option value="sr">Serbian-sr</option>
+				<option value="st">Sesotho-st</option>
+				<option value="sn">Shona-sn</option>
+				<option value="sd">Sindhi-sd</option>
+				<option value="si">Sinhala (Sinhalese)-si</option>
+				<option value="sk">Slovak-sk</option>
+				<option value="sl">Slovenian-sl</option>
+				<option value="so">Somali-so</option>
+				<option value="es">Spanish-es</option>
+				<option value="su">Sundanese-su</option>
+				<option value="sw">Swahili-sw</option>
+				<option value="sv">Swedish-sv</option>
+				<option value="tl">Tagalog (Filipino)-tl</option>
+				<option value="tg">Tajik-tg</option>
+				<option value="ta">Tamil-ta</option>
+				<option value="te">Telugu-te</option>
+				<option value="th">Thai-th</option>
+				<option value="tr">Turkish-tr</option>
+				<option value="uk">Ukrainian-uk</option>
+				<option value="ur">Urdu-ur</option>
+				<option value="uz">Uzbek-uz</option>
+				<option value="vi">Vietnamese-vi</option>
+				<option value="cy">Welsh-cy</option>
+				<option value="xh">Xhosa-xh</option>
+				<option value="yi">Yiddish-yi</option>
+				<option value="yo">Yoruba-yo</option>
+				<option value="zu">Zulu-zu</option>
+				</select>
+  </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+
+ <tr> <td><input type="file" id="file" name="file" /> </td></tr>
+ 
+ <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+  
+  <tr><td><b> </b></td> <td></td><td></td> <td> </td></tr>
+ <!-- <input type="button" class="button" value="Translate !"	id="but_upload">-->
+  <tr><td>
+  <button class="buttonload"  id="but_upload" type="button" >
+  <i id="tt" ></i>    Translate !
+</button> 
+  
+  </td></tr>
+  
+  
+			
+			</table>
+			 
+				
+	
+
+<!-- Add font awesome icons to buttons (note that the fa-spin class rotates the icon) -->
+
+			
+		</form> 
+	</div>	 
+	
+	<script type="text/javascript"> 
+		$(document).ready(function() { 
+			$("#but_upload").click(function(e) { 
+				var sl= $("#sl").val();
+				var tl= $("#tl").val();
+				if($('#file')[0].files.length == 0 || sl.trim().length ==0  || tl.trim().length ==0 ){
+					
+					alert("Please select all the details and Upload the file");
+					
+					 e.preventDefault(e);
+				}
+				else{
+					var fd = new FormData(); 
+					console.log( $('#file')[0]);
+					var files = $('#file')[0].files[0]; 
+					fd.append('file', files); 
+					
+					console.log($("#sl").val());
+					console.log($("#tl").val());
+					
+					$('#tt').addClass("fa fa-refresh fa-spin");
+					
+					var url = 'http://localhost:8080/translate/uploadFile/'+sl+'/'+tl+'';
+		
+					$.ajax({ 
+						url: url , 
+						type: 'post', 
+						data: fd, 
+						contentType: false, 
+						processData: false, 
+						success: function(response){ 
+							if(response != 0){ 
+							console.log('file uploaded',response); 
+							// var  x= JSON.stringify(response);
+							// console.log('file uploaded',x); 
+							 
+							 var link=document.createElement('a');
+						//	 link.setAttribute('href', 'data:text/plain+ parsed.join("\r\n");charset=utf-8,' + encodeURIComponent(response));
+							 var blob=new Blob([response]);
+							 link.href=window.URL.createObjectURL(blob);
+							 link.download="TranslatedFile.txt";
+							 link.click();
+							 $('#tt').removeClass("fa fa-refresh fa-spin");
+							} 
+							else{ 
+								alert('file not uploaded'); 
+								$('#tt').removeClass("fa fa-refresh fa-spin");
+							} 
+						}, 
+					}); 
+				}
+			
+			}); 
+		}); 
+	</script> 
+</body> 
+
+</html> 
